@@ -1,0 +1,117 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+.container {
+  width: 100%;
+  min-height: 100vh;
+  /*background: linear-gradient(55deg, #181899, #1d0a27d5);*/
+  background-image: url(images/640px-The_future_\(Unsplash\).jpg);
+  background-position: center;
+  background-size: cover;
+  color: #fff;
+  position: relative;
+}
+
+.clockContainer {
+  width: 500px;
+  height: 130px;
+  position: absolute;
+  top: 40%;
+  left: 40%;
+  transform: translate(-40%, -40%);
+}
+.clock {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  background: rgba(234, 0, 255, 0.2);
+  backdrop-filter: blur(10px);
+}
+.clockContainer::before {
+  content: "";
+  width: 150px;
+  height: 150px;
+  background: #c00918f3;
+  position: absolute;
+  top: -50px;
+  left: -50px;
+  border-radius: 6px;
+  z-index: -1;
+}
+.clockContainer::after {
+  content: "";
+  width: 150px;
+  height: 150px;
+  background: #1f3cdf;
+  position: absolute;
+  right: -35px;
+  bottom: -50px;
+  border-radius: 50%;
+  z-index: -1;
+}
+
+.clock span {
+  width: 40px;
+  font-size: 40px;
+  position: relative;
+  display: inline-block;
+  text-align: center;
+}
+.clock span::after {
+  font-size: 12px;
+  position: absolute;
+  bottom: -13px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+#hrs::after {
+  content: "HOURS";
+}
+#mins::after {
+  content: "MINUTES";
+}
+#sec::after {
+  content: "SECONDS";
+}
+
+@media (max-width: 600px) {
+  .clock {
+    font-size: 8vw;
+  }
+}
+
+@media (max-width: 400px) {
+  .clock {
+    font-size: 10vw;
+  }
+  .clockContainer::before {
+    content: "";
+    width: 150px;
+    height: 150px;
+    background: #c00918f3;
+    position: absolute;
+    top: -60px;
+    left: 50px;
+    border-radius: 6px;
+    z-index: -1;
+  }
+  .clockContainer::after {
+    content: "";
+    width: 150px;
+    height: 150px;
+    background: #1f3cdf;
+    position: absolute;
+    right: 60px;
+    bottom: -50px;
+    border-radius: 50%;
+    z-index: -1;
+  }
+}
